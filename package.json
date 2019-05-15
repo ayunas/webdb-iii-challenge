@@ -1,0 +1,28 @@
+{
+  "name": "webdb-iii-challenge",
+  "version": "1.0.0",
+  "description": "NodeAPI from scratch using express and a SQLite3 database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayunas/webdb-iii-challenge.git"
+  },
+  "author": "ayunas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayunas/webdb-iii-challenge/issues"
+  },
+  "homepage": "https://github.com/ayunas/webdb-iii-challenge#readme",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}
