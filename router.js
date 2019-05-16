@@ -30,6 +30,21 @@ router.get('/:id', (req,res) => {
     });
 });
 
+router.get('/:id/students', (req,res) => {
+    db('students')
+    .where({cohort_id : req.params.id})
+    .then( students => {
+        if (students) {
+            res.status(200).json(students);
+        } else {
+            res.status(404).json({message : `no students in cohort id # ${req.params.id} found`});
+        }
+    })
+    .catch( err => {
+        res.status(500).json(err.message);
+    })
+})
+
 router.post('/', (req,res) => {
     if (!req.body.cohort) {
         res.status(400).json({message : `cohort key required.`})
@@ -44,7 +59,7 @@ router.post('/', (req,res) => {
 });
 
 router.put('/:id', (req,res) => {
-    
+
     db('cohorts')
     .where({id : req.params.id})
     .update(req.body)
